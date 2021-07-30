@@ -6,7 +6,7 @@ package array.insert.shift;
 public class App {
 
     public static void main(String[] args) {
-      int [] x={1,2,4,5,90};
+      int [] x={1,2,4,5,6};
       x=insertShiftArray(x,8);
       for (int i = 0; i < x.length; i++) {
         System.out.println(x[i]);
@@ -14,7 +14,13 @@ public class App {
     }
     public static int[] insertShiftArray(int[] arr ,int value){
       int[] newArr=new int[arr.length+1];
-      int midIndex=(int)Math.ceil(arr.length/2.0);
+      int midIndex;
+      if (arr.length%2==0){
+        midIndex=(int)(arr.length/2.0);
+      }else{
+        midIndex=(int)((arr.length+1)/2.0);
+      }
+
       for (int i = 0; i < arr.length; i++) {
         newArr[i]=arr[i];
       }
