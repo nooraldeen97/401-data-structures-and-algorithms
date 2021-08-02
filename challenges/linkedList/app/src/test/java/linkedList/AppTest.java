@@ -69,7 +69,7 @@ public class AppTest {
       ls.Insert(3);
       ls.InsertAfter(3,4);
       System.out.println(ls.ToString());
-      assertEquals("head ->{1}->{2}->{3}->{4}->X",ls.ToString()); //Insert after the last node
+      assertEquals("head ->{1}->{2}->{3}->{4}->X",ls.ToString()); //test Insert after the last node
       ls.InsertAfter(2,6);
       System.out.println(ls.ToString());
       assertEquals("head ->{1}->{2}->{6}->{3}->{4}->X",ls.ToString());//Insert after the middle node
