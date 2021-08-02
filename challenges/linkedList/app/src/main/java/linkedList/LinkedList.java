@@ -7,11 +7,35 @@ public class LinkedList {
 
   Node head;
   int counter;
+  int length;
 
   public LinkedList(){
     this.head=null;
     this.counter=0;
+    this.length=0;
   }
+
+    public int kthFromEnd(int k) throws Exception {
+      Node current = head;
+      if (k > 0 && k <= counter) {
+        while (current.next != null) {
+
+          if ((counter - k) == length) {
+            break;
+          }
+          current = current.next;
+          length++;
+        }
+        return current.value;
+      }
+      else{
+        throw new Exception("Exception message");
+      }
+    }
+
+
+    
+
 
     public void InsertBefore(int value,int newValue){
       Node newNode = new Node(newValue);
@@ -51,6 +75,8 @@ public class LinkedList {
       }
 
     }
+
+
     public void Insert(int value){
       Node newNode =new Node(value);
       if(head==null){
