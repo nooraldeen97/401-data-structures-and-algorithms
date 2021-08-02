@@ -34,6 +34,9 @@ public class LinkedList {
     }
 
 
+    
+
+
     public void InsertBefore(int value,int newValue){
       Node newNode = new Node(newValue);
       Node current =head;
