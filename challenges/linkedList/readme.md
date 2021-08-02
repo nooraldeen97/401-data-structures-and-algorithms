@@ -37,4 +37,22 @@ Arguments: none <br>
 Returns: a string representing all the values in the Linked List, formatted as:<br>
 "{ a } -> { b } -> { c } -> NULL"<br>
 
+**insertBefore**:<br>
+ insert a new node before a given value<br>
+**insertAfter**:<br>
+ insert a new node after a given value<br>
 
+ <hr>
+
+ ![my-image](./linkedlist.png)
+
+ <hr>
+
+
+**in the test file I have tests for:** <br>
+add a node to the end of the linked list<br>
+ add multiple nodes to the end of a linked list<br>
+ insert a node before a node located i the middle of a linked list<br>
+ insert a node before the first node of a linked list<br>
+ insert after a node in the middle of the linked list<br>
+ insert a node after the last node of the linked list<br>
