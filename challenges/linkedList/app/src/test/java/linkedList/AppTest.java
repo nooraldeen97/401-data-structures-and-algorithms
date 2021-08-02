@@ -48,10 +48,7 @@ public class AppTest {
       assertEquals("make sure that head point to the firstNode",2, ls.head.next.value);
 
     }
-    // Where k is greater than the length of the linked list
-  @Test public void TestWhenKgreater(){
-      ls.
-  }
+
 
     @Test public void TestInsertBefore(){
       ls.Insert(1);
