@@ -48,4 +48,29 @@ public class AppTest {
       assertEquals("make sure that head point to the firstNode",2, ls.head.next.value);
 
     }
+
+    @Test public void TestInsertBefore(){
+      ls.Insert(1);
+      ls.Insert(2);
+      ls.Insert(3);
+      ls.InsertBefore(1,9);
+      System.out.println(ls.ToString());
+      assertEquals(9,ls.head.value); //insert before the first node
+      ls.InsertBefore(3,8);
+      System.out.println(ls.ToString());
+
+      assertEquals("head ->{9}->{1}->{2}->{8}->{3}->X",ls.ToString()); //insert before the middle node
+    }
+
+    @Test public void TestInsertAfter(){
+      ls.Insert(1);
+      ls.Insert(2);
+      ls.Insert(3);
+      ls.InsertAfter(3,4);
+      System.out.println(ls.ToString());
+      assertEquals("head ->{1}->{2}->{3}->{4}->X",ls.ToString()); //Insert after the last node
+      ls.InsertAfter(2,6);
+      System.out.println(ls.ToString());
+      assertEquals("head ->{1}->{2}->{6}->{3}->{4}->X",ls.ToString());//Insert after the middle node
+    }
 }
