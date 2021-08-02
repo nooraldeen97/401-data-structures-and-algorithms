@@ -13,6 +13,44 @@ public class LinkedList {
     this.counter=0;
   }
 
+    public void InsertBefore(int value,int newValue){
+      Node newNode = new Node(newValue);
+      Node current =head;
+      if(current.value==value){
+        newNode.next=current;
+        head=newNode;
+      }
+      while (current.next!=null){
+
+        if(current.next.value ==value){
+
+          newNode.next=current.next;
+          current.next=newNode;
+          break;
+        }
+        current=current.next;
+      }
+    }
+
+    public void InsertAfter(int value , int newValue){
+      Node newNode = new Node(newValue);
+      Node current=head;
+
+      while (current.next!=null){
+
+        if(current.value ==value){
+          newNode.next=current.next;
+          current.next=newNode;
+          break;
+        }
+        current=current.next;
+      }
+      if(current.next==null && current.value==value){
+        newNode.next=null;
+        current.next=newNode;
+      }
+
+    }
     public void Insert(int value){
       Node newNode =new Node(value);
       if(head==null){
@@ -54,8 +92,8 @@ public class LinkedList {
         result=result+"{"+current.value+"}->";
         current=current.next;
       }
-      result=result+"NULL";
-      return result;
+      result=result+"X";
+      return "head ->"+result;
     }
 
 }
