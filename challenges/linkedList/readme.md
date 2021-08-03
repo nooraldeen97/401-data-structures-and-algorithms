@@ -37,8 +37,13 @@ Arguments: none <br>
 Returns: a string representing all the values in the Linked List, formatted as:<br>
 "{ a } -> { b } -> { c } -> NULL"<br>
 
+**append**
+ arguments: new value<br>
+adds a new node with the given value to the end of the list<br>
+
 **insertBefore**:<br>
  insert a new node before a given value<br>
+
 **insertAfter**:<br>
  insert a new node after a given value<br>
 
@@ -47,6 +52,14 @@ Returns: a string representing all the values in the Linked List, formatted as:<
  ![my-image](./linkedlist.png)
 
  <hr>
+
+**kth from end**<br>
+argument: a number, k, as a parameter.<br>
+Return the node’s value that is k places from the tail of the linked list.<br>
+It has access to the Node class and all the properties on the Linked List class <br>
+
+![my-image](./kthMethod.png)
+ 
 
 
 **in the test file I have tests for:** <br>

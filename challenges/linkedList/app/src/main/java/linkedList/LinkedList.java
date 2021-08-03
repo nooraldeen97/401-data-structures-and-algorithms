@@ -3,7 +3,7 @@
  */
 package linkedList;
 
-public class LinkedList {
+public class LinkedList{
 
   Node head;
   int counter;
@@ -15,7 +15,9 @@ public class LinkedList {
     this.length=0;
   }
 
-    public int kthFromEnd(int k) throws Exception {
+
+
+  public int kthFromEnd(int k) throws Exception {
       Node current = head;
       if (k > 0 && k <= counter) {
         while (current.next != null) {
@@ -34,7 +36,6 @@ public class LinkedList {
     }
 
 
-    
 
 
     public void InsertBefore(int value,int newValue){
@@ -76,22 +77,29 @@ public class LinkedList {
 
     }
 
+    public void insert(int value){
+      Node newNode = new Node(value);
+      newNode.next=head;
+      head=newNode;
 
-    public void Insert(int value){
-      Node newNode =new Node(value);
-      if(head==null){
-        head =newNode;
-
-      }else {
-        Node current = head;
-        while (current.next!=null){
-
-          current=current.next;
-        }
-        current.next=newNode;
-
-      }
       counter++;
+    }
+
+
+    public void append(int value){
+      Node newNode =new Node(value);
+      if (head == null) {
+        head = newNode;
+      } else {
+        Node current = head;
+        while (current.next != null) {
+
+          current = current.next;
+        }
+        current.next = newNode;
+
+        counter++;
+      }
     }
 
     public Boolean Includes(int value){

@@ -3,6 +3,7 @@
  */
 package linkedList;
 
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -12,9 +13,9 @@ public class AppTest {
     }
       LinkedList ls = new LinkedList();
     @Test public void TestInsert(){
-      ls.Insert(2);
-      ls.Insert(2);
-      ls.Insert(2);
+      ls.insert(2);
+      ls.insert(2);
+      ls.insert(2);
 
       assertEquals("This method check if the inserted time equal the linkedList length",3,ls.counter,0.0);
     }
@@ -24,8 +25,8 @@ public class AppTest {
     }
 
     @Test public void TestIncludes(){
-      ls.Insert(5);
-      ls.Insert(7);
+      ls.insert(5);
+      ls.append(7);
 
 
       assertEquals("This method return true if the value is found in the linked list and false if not",true,ls.Includes(5));
@@ -33,30 +34,27 @@ public class AppTest {
     }
 
     @Test public void TestPrintAllLinkedList(){
-      ls.Insert(1);
-      ls.Insert(2);
-      ls.Insert(3);
+      ls.insert(1);
+      ls.append(2);
+      ls.append(3);
 
       assertEquals("make sure it can print out the linked list","{1}->{2}->{3}->NULL",ls.ToString());
     }
 
     @Test public void TestIfHeadPointToFirstNode(){
-      ls.Insert(1);
-      ls.Insert(2);
-      ls.Insert(3);
+      ls.insert(1);
+      ls.append(2);
+      ls.append(3);
       assertEquals("make sure that head point to the firstNode",1, ls.head.value);
       assertEquals("make sure that head point to the firstNode",2, ls.head.next.value);
 
     }
-    // Where k is greater than the length of the linked list
-  @Test public void TestWhenKgreater(){
-      ls.
-  }
+
 
     @Test public void TestInsertBefore(){
-      ls.Insert(1);
-      ls.Insert(2);
-      ls.Insert(3);
+      ls.insert(1);
+      ls.append(2);
+      ls.append(3);
       ls.InsertBefore(1,9);
       System.out.println(ls.ToString());
       assertEquals(9,ls.head.value); //insert before the first node
@@ -67,14 +65,22 @@ public class AppTest {
     }
 
     @Test public void TestInsertAfter(){
-      ls.Insert(1);
-      ls.Insert(2);
-      ls.Insert(3);
+      ls.insert(1);
+      ls.append(2);
+      ls.append(3);
       ls.InsertAfter(3,4);
       System.out.println(ls.ToString());
       assertEquals("head ->{1}->{2}->{3}->{4}->X",ls.ToString()); //test Insert after the last node
       ls.InsertAfter(2,6);
       System.out.println(ls.ToString());
       assertEquals("head ->{1}->{2}->{6}->{3}->{4}->X",ls.ToString());//Insert after the middle node
+    }
+
+    @Test public void testkthFromEnd() throws Exception {
+      ls.insert(1);
+      ls.append(2);
+      ls.append(3);
+      ls.kthFromEnd(2);
+      assertEquals(1,ls.kthFromEnd(2),0.0);
     }
 }
