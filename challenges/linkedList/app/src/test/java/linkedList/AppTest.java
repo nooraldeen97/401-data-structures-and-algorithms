@@ -76,7 +76,42 @@ public class AppTest {
       assertEquals("head ->{1}->{2}->{6}->{3}->{4}->X",ls.ToString());//Insert after the middle node
     }
 
-    @Test public void testkthFromEnd() throws Exception {
+    // test the ZipLists when both linked list have the same length
+    @Test public void testZipLists(){
+      LinkedList list1 =new LinkedList();
+      LinkedList list2 =new LinkedList();
+      list1.insert(1);
+      list1.append(3);
+      list1.append(2);
+      list2.append(5);
+      list2.append(9);
+      list2.append(4);
+      assertEquals("head ->{1}->{5}->{3}->{9}->{2}->{4}->X",list1.zipLists(list1,list2).ToString().toString());
+    }
+
+  // test the ZipLists when both linked list dont have  the same length
+  @Test public void test2ZipLists(){
+    LinkedList list1 =new LinkedList();
+    LinkedList list2 =new LinkedList();
+    list1.insert(1);
+    list1.append(3);
+    list1.append(2);
+    list2.append(5);
+    list2.append(9);
+    assertEquals("head ->{1}->{5}->{3}->{9}->{2}->X",list1.zipLists(list1,list2).ToString().toString());
+  }
+
+  // test the ZipLists when one of them is empty linked list
+  @Test public void test3ZipLists(){
+    LinkedList list1 =new LinkedList();
+    LinkedList list2 =new LinkedList();
+    list1.insert(1);
+    list1.append(3);
+    list1.append(2);
+    assertEquals("head ->{1}->{3}->{2}->X",list1.zipLists(list1,list2).ToString().toString());
+  }
+
+  @Test public void testkthFromEnd() throws Exception {
       ls.insert(1);
       ls.append(2);
       ls.append(3);

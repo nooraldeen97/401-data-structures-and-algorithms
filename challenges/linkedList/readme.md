@@ -61,6 +61,17 @@ It has access to the Node class and all the properties on the Linked List class 
 ![my-image](./kthMethod.png)
  
 
+ <hr>
+
+**zipLists**<br>
+write the function that accepts two Linked list and merge them .<br>
+
+
+![my-image](./merged-linked-list.png)
+
+
+
+
 
 **in the test file I have tests for:** <br>
 add a node to the end of the linked list<br>
