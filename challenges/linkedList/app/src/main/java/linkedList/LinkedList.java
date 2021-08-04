@@ -15,43 +15,7 @@ public class LinkedList{
     this.length=0;
   }
 
-//while (list1Node != null || list2Node != null) {
-//    if (list1Node != null){
-//      mergedList.insert(list1Node.value);
-//      list1Node = list1Node.next;
-//    }
-//    if (list2Node != null){
-//      mergedList.insert(list2Node.value);
-//      list2Node = list2Node.next;
-//    }
-//    public LinkedList  zipLists( LinkedList list1,LinkedList list2){
-//    LinkedList ls = new LinkedList();
-//    Node current1 = list1.head;
-//    Node current2 = list2.head;
-//
-//      ls.insert(current1.value);
-//      while (current1.next!=null || current2.next!=null ){
-//         current1=current1.next;
-//        ls.append(current2.value);
-//        assert current1 != null;
-//        ls.append(current1.value);
-//        current2=current2.next;
-//
-//      }
-//
-////        ls.append(current2.value);
-//
-//      return ls;
-//    }
 
-// if(current1!= null){
-//          ls.append(current1.value);
-//          current1=current1.next;
-//        }
-//        if(current2!= null){
-//          ls.append(current2.value);
-//          current1=current2.next;
-//        }
 
 
   public LinkedList  zipLists( LinkedList list1,LinkedList list2){
