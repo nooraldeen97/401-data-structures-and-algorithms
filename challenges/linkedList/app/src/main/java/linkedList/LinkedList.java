@@ -16,7 +16,25 @@ public class LinkedList{
   }
 
 
+  public LinkedList reverse(LinkedList ls) {
+    Node  prev = null;
+    Node  current = head;
+    Node  next = null;
 
+    while (current != null) {
+      // Before changing next of current,
+      // store next node
+      next = current.next;
+      // Now change next of current
+      // This is where actual reversing happens
+      current.next = prev;
+      // Move prev and curr one step forward
+      prev = current;
+      current = next;
+    }
+    head = prev;
+    return ls;
+  }
 
   public LinkedList  zipLists( LinkedList list1,LinkedList list2){
 
