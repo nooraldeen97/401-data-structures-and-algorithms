@@ -38,7 +38,7 @@ public class AppTest {
       ls.append(2);
       ls.append(3);
 
-      assertEquals("make sure it can print out the linked list","{1}->{2}->{3}->NULL",ls.ToString());
+      assertEquals("make sure it can print out the linked list","head ->{1}->{2}->{3}->X",ls.ToString());
     }
 
     @Test public void TestIfHeadPointToFirstNode(){
@@ -112,10 +112,26 @@ public class AppTest {
   }
 
   @Test public void testkthFromEnd() throws Exception {
+    LinkedList ls =new LinkedList();
+    ls.insert(1);
+      ls.append(2);
+      ls.append(3);
+    assertEquals(2,ls.kthFromEnd(2),0.0);
+//    assertThrows("Exception message",);
+
+    }
+//
+    @Test(expected = Exception.class) public void testing() throws Exception {
+      LinkedList list = new LinkedList();
       ls.insert(1);
       ls.append(2);
       ls.append(3);
-      ls.kthFromEnd(2);
-      assertEquals(1,ls.kthFromEnd(2),0.0);
+      try {
+        ls.kthFromEnd(5);
+
+      } catch (Exception e) {
+        throw new Exception("Exception message");
+      }
     }
+
 }

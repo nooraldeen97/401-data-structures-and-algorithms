@@ -7,6 +7,8 @@ public class App {
 
 
     public static void main(String[] args) throws Exception {
+
+      
       Stack<Integer> stack = new Stack<>();
       stack.push(2);
       stack.push(5);
