@@ -7,3 +7,4 @@
 |  array-insert-shift    | [array-insert-shift](challenges/array-insert-shift/readme.md)       | [array-insert-shift](challenges/array-insert-shift/app/src/main/java/array/insert/shift/App.java)  |
 |  array-binary-search     | [array-binary-search](challenges/array-binary-search/readme.md)       | [array-binary-search](challenges/array-binary-search/app/src/main/java/array/binary/search/App.java)  |
 |  Linked-Lists     | [Linked-Lists](challenges/linkedList/readme.md)       | [Linked-Lists](challenges/linkedList/app/src/main/java/linkedList/App.java)  |
+|  stack-and-queue     | [stack-and-queue](challenges/stack-and-queue/readme.md)       | [stack-and-queue](challenges/stack-and-queue/app/src/main/java/stack/and/queue/PseudoQueue.java)  |
