@@ -20,9 +20,11 @@ package stack.and.queue;
         current=current.next;
       }
       front=current;
+
     }
 
-    
+
+
 
     public T pseudoDequeue() throws Exception {
       T result = null;
@@ -53,4 +55,6 @@ package stack.and.queue;
     return result;
   }
 
+
+  
 }
