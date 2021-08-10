@@ -3,6 +3,8 @@ package stack.and.queue;
 
   public class PseudoQueue<T> {
 
+
+
     public Stack<T> stack1 = new Stack<T>();
     public Stack<T> stack2 = new Stack<>();
 
@@ -19,6 +21,8 @@ package stack.and.queue;
       }
       front=current;
     }
+
+    
 
     public T pseudoDequeue() throws Exception {
       T result = null;
