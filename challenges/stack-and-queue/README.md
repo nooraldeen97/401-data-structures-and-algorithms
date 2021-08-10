@@ -34,7 +34,34 @@ Common terminology for a queue is:<br>
 
 5- IsEmpty - returns true when queue is empty otherwise returns false.<br>
 
+<hr>
+
+## Challenge Pseudo Queue<br>
+
+Create a new class called pseudo queue. this PseudoQueue class will implement our standard queue interface. <br>Internally, utilize 2 Stack instances to create and manage the queue.<br>
+
+pseudoEnqueue() : Inserts value into the PseudoQueue, using a first-in, first-out approach.<br>
+
+pseudoDequeue() : Extracts a value from the PseudoQueue, using a first-in, first-out approach.<br>
 
 
+
+## White borad <br>
+
+![image](./psuedoQueue.png)
+
+Approach & Efficiency<br>
+
+pseudoEnqueue() : Inserts value into the PseudoQueue, using a first-in, first-out approach.<br>
+
+Space: O(1)<br>
+
+Time : O(1)<br>
+
+pseudoDequeue() : Extracts a value from the PseudoQueue, using a first-in, first-out approach.<br>
+
+Space: O(1)<br>
+
+Time : O(n)<br>
 
 
