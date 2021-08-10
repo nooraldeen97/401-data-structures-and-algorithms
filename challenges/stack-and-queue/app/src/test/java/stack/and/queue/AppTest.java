@@ -158,5 +158,44 @@ public class AppTest {
 
   }
 
+  // Edge case "List is empty"
+  @Test(expected = Exception.class) public void emptyStackTest() throws Exception {
+    PseudoQueue<Integer> test = new PseudoQueue<>();
+    test.pseudoDequeue();
+  }
+
+  //
+  //    stack-queue-pseudo
+  @Test
+  public void stackQueuePseudo() throws Exception {
+    PseudoQueue<Integer> test = new PseudoQueue<>();
+
+
+    test.pseudoEnqueue(5);
+    test.pseudoEnqueue(3);
+    test.pseudoEnqueue(2);
+    test.pseudoEnqueue(4);
+    test.pseudoEnqueue(6);
+
+    // Happy path - delete first in "5"
+    assertEquals(5, test.pseudoDequeue(),0.0);
+
+    test.pseudoDequeue();
+    test.pseudoDequeue();
+
+    // Correct removing "4"
+    assertEquals(4, test.pseudoDequeue(),0.0);
+  }
+
+  // test pseudoEnqueue successfully and ToString method
+  @Test public void testEnqueue(){
+    PseudoQueue<Integer> queue = new PseudoQueue<>();
+
+    queue.pseudoEnqueue(2);
+    queue.pseudoEnqueue(8);
+    queue.pseudoEnqueue(3);
+
+    assertEquals("back->{3}->{8}->{2}->front",queue.ToSting());
+  }
 
 }
