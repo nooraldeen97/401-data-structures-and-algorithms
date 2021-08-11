@@ -3,6 +3,8 @@
  */
 package stack.and.queue;
 
+import org.checkerframework.checker.units.qual.A;
+
 public class App {
 
 
@@ -32,16 +34,33 @@ public class App {
 //      System.out.println(queue.front.value);
 
 
-      PseudoQueue<Integer> pseudoQueue =new PseudoQueue<>();
-      pseudoQueue.pseudoEnqueue(4);
-      pseudoQueue.pseudoEnqueue(5);
-      pseudoQueue.pseudoEnqueue(6);
-      System.out.println(pseudoQueue.front.value);
-      System.out.println(pseudoQueue.back.value);
+//      PseudoQueue<Integer> pseudoQueue =new PseudoQueue<>();
+//      pseudoQueue.pseudoEnqueue(4);
+//      pseudoQueue.pseudoEnqueue(5);
+//      pseudoQueue.pseudoEnqueue(6);
+//      System.out.println(pseudoQueue.front.value);
+//      System.out.println(pseudoQueue.back.value);
+//
+//      System.out.println(pseudoQueue.pseudoDequeue());
+//
+//      System.out.println(pseudoQueue.ToSting());
 
-      System.out.println(pseudoQueue.pseudoDequeue());
+//      AnimalShelter<String> animalShelter =new AnimalShelter<>("cat");
+//      AnimalShelter<String> animalShelter2 =new AnimalShelter<>("Dog");
+//      animalShelter.enqueue(animalShelter);
+//      animalShelter.enqueue(animalShelter2);
+//      System.out.println(animalShelter.dequeue("CAT"));;
+//      System.out.println(animalShelter.dequeue("cat"));
+      AnimalShelter<Animal> animalShelter= new AnimalShelter<>();
 
-      System.out.println(pseudoQueue.ToSting());
+      Cats cats =new Cats("cat");
+      Dogs dogs =new Dogs("bobe");
+      Dogs dogs1 = new Dogs("fff");
+      animalShelter.enqueue(dogs1);
+      animalShelter.enqueue(cats);
+      animalShelter.enqueue(dogs);
+      System.out.println(animalShelter.dequeue("cat"));
 
+      System.out.println(animalShelter.queue.ToSting());
     }
 }

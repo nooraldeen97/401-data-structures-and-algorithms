@@ -67,64 +67,71 @@ public class AppTest {
   }
 
   //Test that Can successfully peek the next item on the stack
-  @Test public void testPeekToNext() throws Exception {
+  @Test
+  public void testPeekToNext() throws Exception {
     Stack<String> stack = new Stack<>();
     stack.push("You are in the next of Top");
     stack.push("you are in the Top");
     stack.pop();
-    assertEquals("You are in the next of Top",stack.peek());
+    assertEquals("You are in the next of Top", stack.peek());
   }
 
   // Test that can successfully instantiate an empty stack(so stack.top= null)
-  @Test public void testCreatingAnEmptyStack() {
+  @Test
+  public void testCreatingAnEmptyStack() {
     Stack<Integer> stack = new Stack<>();
 
     assertNull("stack.top Should equals null", stack.top);
-    assertEquals("The output of ToString method should have any value","Top->null",stack.ToString());
+    assertEquals("The output of ToString method should have any value", "Top->null", stack.ToString());
   }
 
   // Test that Can successfully enqueue into a queue and test ToString method that work correctly
-  @Test public void testEnqueueINQueue(){
+  @Test
+  public void testEnqueueINQueue() {
     Queue<Integer> queue = new Queue<>();
     queue.enqueue(5);
-    assertEquals(5,queue.back.value,0.0);
-    assertEquals("back->{5}->front",queue.ToSting());
+    assertEquals(5, queue.back.value, 0.0);
+    assertEquals("back->{5}->front", queue.ToSting());
   }
 
   // Test that Can successfully enqueue multiple values into a queue
-  @Test public void testEnqueueMultilpeValue(){
+  @Test
+  public void testEnqueueMultilpeValue() {
     Queue<Integer> queue = new Queue<>();
     queue.enqueue(5);
     queue.enqueue(6);
     queue.enqueue(8);
 
-    assertEquals("back->{8}->{6}->{5}->front",queue.ToSting());
-    assertEquals(8,queue.back.value,0.0);
-    assertEquals(5,queue.front.value,0.0);
+    assertEquals("back->{8}->{6}->{5}->front", queue.ToSting());
+    assertEquals(8, queue.back.value, 0.0);
+    assertEquals(5, queue.front.value, 0.0);
   }
 
   // Test that Can successfully dequeue out of a queue the expected value
-  @Test public void testDequeueMethod() throws Exception {
+  @Test
+  public void testDequeueMethod() throws Exception {
     Queue<Integer> queue = new Queue<>();
     queue.enqueue(5);
     queue.enqueue(6);
     queue.enqueue(8);
     queue.dequeue();
-   assertEquals("The Node that should be removed is 5","back->{8}->{6}->front",queue.ToSting());
+    assertEquals("The Node that should be removed is 5", "back->{8}->{6}->front", queue.ToSting());
   }
 
   // Test that Can successfully peek into a queue, seeing the expected value
-  @Test public void testPeekToFrontMethod() throws Exception {
+  @Test
+  public void testPeekToFrontMethod() throws Exception {
     Queue<Integer> queue = new Queue<>();
     queue.enqueue(5);
     queue.enqueue(6);
     queue.enqueue(8);
 
-    assertEquals(5,queue.peek(),0.0);
+    assertEquals(5, queue.peek(), 0.0);
   }
 
   //Test that Can successfully empty a queue after multiple dequeues
-  @Test public void testEmptyTheQueue() throws Exception {
+  @Test
+  public void testEmptyTheQueue() throws Exception {
     Queue<Integer> queue = new Queue<>();
     queue.enqueue(5);
     queue.enqueue(6);
@@ -132,34 +139,38 @@ public class AppTest {
     queue.dequeue();
     queue.dequeue();
     queue.dequeue();
-    assertEquals(null,queue.front);
-    assertEquals(null,queue.back);
+    assertEquals(null, queue.front);
+    assertEquals(null, queue.back);
   }
 
   // Test that Can successfully instantiate an empty queue
-  @Test public void testInstantiateEmptyQueue(){
+  @Test
+  public void testInstantiateEmptyQueue() {
     Queue<Integer> queue = new Queue<>();
-    assertEquals("back->front",queue.ToSting());
-    assertEquals(null,queue.back);
-    assertEquals(null,queue.front);
+    assertEquals("back->front", queue.ToSting());
+    assertEquals(null, queue.back);
+    assertEquals(null, queue.front);
   }
 
   // Test that Calling peek on empty queue raises exception
-  @Test(expected = Exception.class)public void testPeekException() throws Exception {
+  @Test(expected = Exception.class)
+  public void testPeekException() throws Exception {
     Queue<Integer> queue = new Queue<>();
     queue.peek();
 
   }
 
   // Test that Calling dequeue on empty queue raises exception
-  @Test(expected = Exception.class)public void testDequeueException() throws Exception {
+  @Test(expected = Exception.class)
+  public void testDequeueException() throws Exception {
     Queue<Integer> queue = new Queue<>();
     queue.dequeue();
 
   }
 
   // Edge case "List is empty"
-  @Test(expected = Exception.class) public void emptyStackTest() throws Exception {
+  @Test(expected = Exception.class)
+  public void emptyStackTest() throws Exception {
     PseudoQueue<Integer> test = new PseudoQueue<>();
     test.pseudoDequeue();
   }
@@ -178,24 +189,75 @@ public class AppTest {
     test.pseudoEnqueue(6);
 
     // Happy path - delete first in "5"
-    assertEquals(5, test.pseudoDequeue(),0.0);
+    assertEquals(5, test.pseudoDequeue(), 0.0);
 
     test.pseudoDequeue();
     test.pseudoDequeue();
 
     // Correct removing "4"
-    assertEquals(4, test.pseudoDequeue(),0.0);
+    assertEquals(4, test.pseudoDequeue(), 0.0);
   }
 
   // test pseudoEnqueue successfully and ToString method
-  @Test public void testEnqueue(){
+  @Test
+  public void testEnqueue() {
     PseudoQueue<Integer> queue = new PseudoQueue<>();
 
     queue.pseudoEnqueue(2);
     queue.pseudoEnqueue(8);
     queue.pseudoEnqueue(3);
 
-    assertEquals("back->{3}->{8}->{2}->front",queue.ToSting());
+    assertEquals("back->{3}->{8}->{2}->front", queue.ToSting());
   }
 
+  // test enqueue cats and dogs
+  @Test
+  public void enqueueAnimal() {
+    AnimalShelter<Animal> animalShelter = new AnimalShelter<>();
+    Cats soma = new Cats("soma");
+    Dogs bobe = new Dogs("bobe");
+    Dogs kate = new Dogs("kate");
+
+    animalShelter.enqueue(soma);
+    animalShelter.enqueue(bobe);
+    animalShelter.enqueue(kate);
+    assertEquals("back->{Dogs{dogName='kate'}}->{Dogs{dogName='bobe'}}->{Cats{catName='soma'}}->front", animalShelter.queue.ToSting());
+  }
+
+  //test Dequeue when  pref not cats or dog from the shelter it should return null
+  @Test
+  public void dequeueAnimalEdgeCase() throws Exception {
+    AnimalShelter<Animal> animalShelter = new AnimalShelter<>();
+    Cats soma = new Cats("soma");
+    Dogs bobe = new Dogs("bobe");
+    Dogs kate = new Dogs("kate");
+    animalShelter.enqueue(soma);
+    animalShelter.enqueue(bobe);
+    animalShelter.enqueue(kate);
+//    System.out.println(animalShelter.dequeue("vv"));
+
+    assertEquals(null, animalShelter.dequeue("zebra"));
+
+  }
+
+  //test Dequeue when  pref not cats or dog from the shelter it should return null
+  @Test
+  public void dequeueCatOrDog() throws Exception {
+    AnimalShelter<Animal> animalShelter = new AnimalShelter<>();
+    Cats soma = new Cats("soma");
+    Dogs bobe = new Dogs("bobe");
+    Dogs kate = new Dogs("kate");
+    animalShelter.enqueue(soma);
+    animalShelter.enqueue(bobe);
+    animalShelter.enqueue(kate);
+
+    assertEquals("cat", animalShelter.dequeue("cat"));
+  }
+
+  // test dequeue when the shelter is empty
+  @Test(expected = Exception.class)
+  public void EmptyShelterQueue() throws Exception {
+    AnimalShelter<Animal> animalShelter = new AnimalShelter<>();
+    animalShelter.dequeue("cat");
+  }
 }
