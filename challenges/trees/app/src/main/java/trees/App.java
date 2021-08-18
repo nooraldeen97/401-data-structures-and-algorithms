@@ -5,6 +5,7 @@ package trees;
 
 import javax.naming.BinaryRefAddr;
 import java.util.ArrayList;
+import java.util.List;
 
 public class App {
 
@@ -69,6 +70,31 @@ public class App {
       System.out.println(binaryTreeS.root.value);
 
 
+      List<Integer> list = new ArrayList<>();
+      list.add(1);
+      list.add(2);
+      list.add(3);
+      list.add(4);
+      list.add(5);
+      list.add(6);
+      list.add(7);
+      list.add(8);
+      list.add(9);
+      list.add(30);
+      KAryTree<Integer> kAryTree = new KAryTree<>(list, 3);
+
+//    System.out.println("root " + kArayTree.getRoot().getKey());
+//    System.out.println(kArayTree.getRoot().getChild(0).getKey());
+//    System.out.println(kArayTree.getRoot().getChild(1).getKey());
+//    System.out.println(kArayTree.getRoot().getChild(0).getChild(0).getKey());
+//    System.out.println(kArayTree.getRoot().getChild(0).getChild(1).getKey());
+//    System.out.println(kArayTree.getRoot().getChild(0).getChild(2).getKey());
+
+      kAryTree.postorder(kAryTree.getRoot());
+      System.out.println();
+      kAryTree.treeFizzBuzz();
+      kAryTree.postorder(kAryTree.getRoot());
+    }
 
     }
 }
