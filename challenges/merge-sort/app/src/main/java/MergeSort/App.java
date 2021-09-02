@@ -4,6 +4,7 @@
 package MergeSort;
 
 import java.sql.Array;
+import java.util.Arrays;
 
 public class App {
 
@@ -22,8 +23,8 @@ public class App {
 
       if(n>1){
         int mid = n/2;
-       int[] left = new int[mid];
-        int[] right=new int[n-mid];
+       int[] left = Arrays.copyOfRange(arr,0,mid);
+        int[] right=Arrays.copyOfRange(arr,mid,n);
 
         mergeSort(left);
         mergeSort(right);
@@ -49,6 +50,22 @@ public class App {
           k++;
         }
 
+        if(i==left.length){
+          for (int l = j; l < right.length; l++) {
+            arr[k] = right[l];
+            k++;
+          }
+        }
+
+        if(j==right.length){
+          for (int r = i; r < left.length; r++) {
+            arr[k] = left[r];
+            k++;
+          }
+        }
+
     return arr;
     }
 }
+
+
