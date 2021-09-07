@@ -33,8 +33,7 @@ public class HashTable {
 
   public int get(String InputKey){
     Entry current = array[hash(InputKey)];
-    int theValue=0;
-
+    int theValue= 0;
     while (current!= null){
       if(current.key==InputKey){
         theValue=current.value;
