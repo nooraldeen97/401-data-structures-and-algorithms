@@ -4,11 +4,32 @@
 package hashMap;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-    }
+  // test the happy path , when we have just one repeated word.
+  @Test
+  public void testTheRepeatedWordFunction(){
+    String statement="Once upon a time, there was a brave princess who"	;
+
+    assertEquals("a",new Hashmap().repeatedWord(statement));
+  }
+
+  // test when the input include many words repeated and it should return the most repeated one and if the repeated word followed bt (,).
+  @Test
+  public void testWhenHaveManyRepeatedWord(){
+    String statement="It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I doing in New York in summer";
+
+    assertEquals("summer",new Hashmap().repeatedWord(statement));
+  }
+
+  //test if the input was empty string.(Edge Case)
+  @Test
+  public void testIfEmptyString(){
+    String space=" ";
+
+    assertEquals("the input is empty",new Hashmap().repeatedWord(space));
+  }
+
 }

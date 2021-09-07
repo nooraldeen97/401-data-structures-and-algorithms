@@ -6,11 +6,13 @@ import java.util.List;
 
 public class Hashmap {
   List <String> spec=new ArrayList<String>();
-  public String hashMap(String statement){
-      String repeatedWord="";
 
+  public String repeatedWord(String statement){
     HashMap<String,Integer> container=new HashMap<>();
-    String[] splitArr=statement.split(" ",0);
+    String[] splitArr=statement.split( "[\\s,]+" ,0);
+    String maxS="the input is empty";
+    if(splitArr.length>0){
+
     for (int i = 0; i < splitArr.length; i++) {
       if(!container.containsKey(splitArr[i])){
         container.put(splitArr[i],1);
@@ -20,25 +22,29 @@ public class Hashmap {
       }
     }
 
-    int max=container.get(splitArr[0]);
-    String maxS=splitArr[4];
-    for (int i = 0; i < splitArr.length; i++) {
-      if(container.get(splitArr[i])>max) {
-        max = container.get(splitArr[i]);
-        maxS= splitArr[i];
+    int max=container.get(spec.get(0));
+     maxS=spec.get(0);
+    for (int i = 1; i < spec.size(); i++) {
+      if(container.get(spec.get(i))>max) {
+        max = container.get(spec.get(i));
+        maxS= spec.get(i);
       }
     }
-//
-//    int max=container.get(spec.get(0));
-//    String maxS=spec.get(0);
-//    for (int i = 1; i < spec.size(); i++) {
-//      if(container.get(spec.get(i))>max) {
-//        max = container.get(spec.get(i));
-//        maxS= spec.get(i);
+    }
+
+    return maxS;
+    }
+
+
+  //    int max=container.get(splitArr[0]);
+//    String maxS=splitArr[4];
+//    for (int i = 0; i < splitArr.length; i++) {
+//      if(container.get(splitArr[i])>max) {
+//        max = container.get(splitArr[i]);
+//        maxS= splitArr[i];
 //      }
 //    }
-  return maxS;
-    }
+//
   }
 
 
