@@ -3,13 +3,10 @@
  */
 package hashMap;
 
-import java.util.HashMap;
-
 public class App {
 
 
     public static void main(String[] args) {
-      System.out.println(new Hashmap().hashMap("hello you one hello hello hello i love you and hello you "));
-
+      System.out.println(new Hashmap().repeatedWord("  a d s e r s a, "));
     }
 }
