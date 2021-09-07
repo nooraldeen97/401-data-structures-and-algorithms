@@ -7,8 +7,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
-    }
+  @Test
+  public void quickSortTests() {
+    QuickSort quickSort = new QuickSort();
+    int[] testArray = {8, 4, 23, 42, 16, 15};
+    int[]resultArray = {4, 8 , 15 , 16,  23, 42};
+    assertArrayEquals(resultArray,quickSort.quickSort(testArray,0,testArray.length-1));
+  }
+
 }
