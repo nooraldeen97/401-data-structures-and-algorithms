@@ -9,6 +9,20 @@ import org.junit.Test;
 import static junit.framework.TestCase.assertEquals;
 
 public class AppTest {
+
+
+  //test the collision in the hashTable .
+  @Test
+  public void testCollision(){
+    HashTable hashTable=new HashTable();
+    hashTable.add("ab",10);
+    hashTable.add("cd",14);
+    //make sure that both keys have same index.
+    assertEquals(hashTable.hash("ab"),hashTable.hash("cd"),0.0);
+    //getting the data from the same index depend on its key.
+    assertEquals(10,hashTable.get("ab"),0.0);
+    assertEquals(14,hashTable.get("cd"),0.0);
+  }
     // Test the add function to Hash table .
     @Test
     public void testAddingToHashTable(){

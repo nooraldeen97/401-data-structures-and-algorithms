@@ -7,6 +7,6 @@ public class App {
 
 
     public static void main(String[] args) {
-      System.out.println(new Hashmap().repeatedWord("  a d s e r s a, "));
+      System.out.println(new Hashmap().repeatedWord(" all name, my name is noor, hello is"));
     }
 }
