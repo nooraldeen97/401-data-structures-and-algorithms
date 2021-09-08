@@ -79,7 +79,157 @@ public class LinkedList{
     return newLinkedList;
   }
 
+  public int FindMax(){
+    Node curr=head;
+    int max=head.value;
+    while (curr!=null){
+      if(curr.value>max){
+        max=curr.value;
+      }
+      curr=curr.next;
+    }
+    return max;
+  }
 
+  public int FindSecondMax(){
+    Node curr=head;
+    int max=head.value;
+    int secondMax=0;
+    while (curr!=null){
+      if(curr.value>max){
+        max=curr.value;
+      }
+      if(curr.value>secondMax && curr.value!=max){
+        secondMax=curr.value;
+      }
+      curr=curr.next;
+    }
+
+    return secondMax;
+  }
+
+  public int FindMin(){
+    Node curr=head;
+    int min=head.value;
+    while (curr!=null){
+      if (curr.value<min){
+        min=curr.value;
+      }
+      curr=curr.next;
+    }
+    return min;
+  }
+
+  public int FindSecondMin(){
+    Node curr=head;
+    int min = head.value;
+    int secondMin=0;
+    while (curr!=null){
+      if(curr.value<min){
+        min=curr.value;
+      }
+      if(curr.value<secondMin && curr.value!=min){
+        secondMin= curr.value;
+      }
+      curr=curr.next;
+    }
+    return secondMin;
+  }
+
+  public void removeDuplicate(){
+    Node curr=head;
+    if(curr==null){
+      return;
+    }
+
+    while (curr.next!=null){
+      if (curr.value==curr.next.value){
+        curr.next=curr.next.next;
+      }
+        curr=curr.next;
+
+    }
+
+  }
+
+  public void deleteSpecific(int value){
+    Node curr=head;
+    while (curr.next!=null){
+      if(curr.next.value==value){
+        curr.next=curr.next.next;
+      }
+      curr=curr.next;
+    }
+  }
+
+  public int findMiddleValue(){
+    Node curr=head;
+    int length=0;
+    float size=0;
+    int middleValue=0;
+    while (curr!=null){
+      size++;
+      curr= curr.next;
+    }
+
+      Node newCurr=head;
+    while (newCurr!=null){
+      length++;
+
+      if(length==Math.round(size/2)){
+//        System.out.println(length);
+//        System.out.println(size/2);
+        middleValue=newCurr.value;
+      }
+        newCurr=newCurr.next;
+    }
+    return middleValue;
+  }
+
+  public void deleteMiddle(){
+    Node curr1= head;
+    int length=0;
+    float size=0;
+
+    while(curr1!=null){
+      size++;
+      curr1=curr1.next;
+    }
+
+    Node curr2=head;
+
+    while(curr2!=null){
+      length++;
+      if (length == Math.round(size/2)){
+        curr2.next=curr2.next.next;
+      }
+      curr2=curr2.next;
+    }
+
+  }
+
+  public Node  midValue(LinkedList list ){
+    Node current = head;
+    int counter = 0;
+    while (current!=null){
+      counter++;
+      current = current.next;
+    }
+    Node mid = list.head;
+    if(counter % 2 == 1){
+      counter = counter / 2;
+    }
+    else{
+      counter = counter - 1;
+      counter = counter / 2;
+    }
+    for(int i = 0 ; i < counter ; i++){
+      mid = mid.next;
+
+    }
+    System.out.println("The Middle value : " + mid.value);
+    return mid;
+  }
   public int kthFromEnd(int k) throws Exception {
       Node current = head;
       if (k > 0 && k <= counter) {
