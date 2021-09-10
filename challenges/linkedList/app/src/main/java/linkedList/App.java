@@ -6,14 +6,14 @@ public class App {
 
     LinkedList ls =new LinkedList();
     ls.insert(1);
-//    ls.append(2);
-//    ls.append(3);
-//    ls.append(4);
-//    ls.append(5);
-//    ls.append(6);
-//    ls.append(7);
+    ls.append(2);
+    ls.append(3);
+    ls.append(4);
+    ls.append(5);
+    ls.append(6);
+    ls.append(7);
 //    ls.append(8);
-      ls.midValue(ls);
+      ls.deleteMiddle();
 //    System.out.println(ls.kthFromEnd(3));
 //      ls.deleteMiddle();
     System.out.println(ls.ToString());
