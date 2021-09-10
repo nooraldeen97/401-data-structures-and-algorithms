@@ -188,19 +188,24 @@ public class LinkedList{
 
   public void deleteMiddle(){
     Node curr1= head;
-    int length=0;
-    float size=0;
-
+    int size=0;
+    int mid=0;
     while(curr1!=null){
       size++;
+      System.out.println(size);
       curr1=curr1.next;
     }
-
+    if(size%2==1){
+      mid=(size-1)/2;
+    }else{
+      mid=size/2;
+    }
+    System.out.println(mid);
     Node curr2=head;
 
     while(curr2!=null){
       length++;
-      if (length == Math.round(size/2)){
+      if (length == mid){
         curr2.next=curr2.next.next;
       }
       curr2=curr2.next;
