@@ -24,19 +24,19 @@ public class App {
 //      binaryTree.root.left.right=rightNode2;
 //      binaryTree.root.right.left=leftNode3;
 
-            BinaryTree <Integer> binaryTree = new BinaryTree<>();
-      Node <Integer> rootNode=new Node<Integer>(5);
-      Node <Integer> leftNode=new Node<Integer>(10);
-      Node <Integer> rightNode=new Node<Integer>(8);
-      Node <Integer> leftNode2=new Node<Integer>(12);
-      Node <Integer> rightNode2=new Node<Integer>(6);
-      Node <Integer> leftNode3=new Node<Integer>(15);
-      binaryTree.root=rootNode;
-      binaryTree.root.left=leftNode;
-      binaryTree.root.right=rightNode;
-      binaryTree.root.left.left=leftNode2;
-      binaryTree.root.left.right=rightNode2;
-      binaryTree.root.right.left=leftNode3;
+//            BinaryTree <Integer> binaryTree = new BinaryTree<>();
+//      Node <Integer> rootNode=new Node<Integer>(5);
+//      Node <Integer> leftNode=new Node<Integer>(10);
+//      Node <Integer> rightNode=new Node<Integer>(8);
+//      Node <Integer> leftNode2=new Node<Integer>(12);
+//      Node <Integer> rightNode2=new Node<Integer>(6);
+//      Node <Integer> leftNode3=new Node<Integer>(15);
+//      binaryTree.root=rootNode;
+//      binaryTree.root.left=leftNode;
+//      binaryTree.root.right=rightNode;
+//      binaryTree.root.left.left=leftNode2;
+//      binaryTree.root.left.right=rightNode2;
+//      binaryTree.root.right.left=leftNode3;
 
 
 
@@ -50,20 +50,23 @@ public class App {
 //        System.out.println(printResult.get(i));
 //      }
 
-//      BinarySearchTree<Integer> binaryTreeS = new BinarySearchTree<>();
-//      Node <Integer> rootNode=new Node<>(23);
-//      Node <Integer> leftNode=new Node<>(8);
-//      Node <Integer> rightNode=new Node<>(42);
-//      Node <Integer> leftNode2=new Node<>(4);
-//      Node <Integer> rightNode2=new Node<>(16);
-//      Node <Integer> leftNode3=new Node<>(27);
-//      binaryTreeS.root=rootNode;
-//      binaryTreeS.root.left=leftNode;
-//      binaryTreeS.root.right=rightNode;
-//      binaryTreeS.root.left.left=leftNode2;
-//      binaryTreeS.root.left.right=rightNode2;
-//      binaryTreeS.root.right.left=leftNode3;
-//
+      BinarySearchTree<Integer> binaryTreeS = new BinarySearchTree<>();
+      Node <Integer> rootNode=new Node<>(23);
+      Node <Integer> leftNode=new Node<>(8);
+      Node <Integer> rightNode=new Node<>(42);
+      Node <Integer> leftNode2=new Node<>(4);
+      Node <Integer> rightNode2=new Node<>(16);
+      Node <Integer> leftNode3=new Node<>(27);
+      binaryTreeS.root=rootNode;
+      binaryTreeS.root.left=leftNode;
+      binaryTreeS.root.right=rightNode;
+      binaryTreeS.root.left.left=leftNode2;
+      binaryTreeS.root.left.right=rightNode2;
+      binaryTreeS.root.right.left=leftNode3;
+//      System.out.println(binaryTreeS.findMax());
+//      System.out.println(binaryTreeS.findSecondMax());
+//      System.out.println(binaryTreeS.findMin());
+      System.out.println(binaryTreeS.findSecondMin());
 //      binaryTreeS.preOrder(binaryTreeS.root);
 
 //      binaryTreeS.add(23);

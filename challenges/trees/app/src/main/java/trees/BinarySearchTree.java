@@ -4,6 +4,75 @@ public class BinarySearchTree<T> extends BinaryTree<T>{
 
   public Node<Integer> root;
 
+
+  public Node addRecursive(Node current, int value) {
+    if (current == null) {
+      return new Node(value);
+    }
+
+    if (value < (int)current.value) {
+      current.left = addRecursive(current.left, value);
+    } else if (value >(int) current.value) {
+      current.right = addRecursive(current.right, value);
+    } else {
+      // value already exists
+      return current;
+    }
+
+    return current;
+  }
+// Find the max number in a Binary tree.
+  public int findMax(){
+
+    Node current=root;
+    int max=0;
+    while (current.right!=null){
+
+      current=current.right;
+    }
+    max= (int) current.value;
+    return max;
+  }
+// Find second max value in binary tree.
+  public int findSecondMax(){
+    Node current=root;
+    int secondMax=0;
+    while (current.right.right!=null){
+      current=current.right;
+    }
+    secondMax= (int) current.value;
+
+    if(current.right.left!=null){
+//      if((int)current.right.left.value >(int) current.value){
+        secondMax=(int)current.right.left.value;
+//      }
+    }
+    return secondMax;
+  }
+  // Find min value in binary tree.
+public int findMin(){
+    Node current=root;
+    int min=0;
+    while (current.left!=null){
+      current=current.left;
+    }
+    min= (int) current.value;
+    return min;
+}
+
+public int findSecondMin(){
+    Node current=root;
+    int secondMin=0;
+    while (current.left.left!=null){
+      current=current.left;
+    }
+    secondMin= (int) current.value;
+    if(current.left.right!=null){
+      secondMin= (int) current.left.right.value;
+    }
+    return secondMin;
+}
+
   public void add(Integer value) {
 
     if (root.value == null) {
