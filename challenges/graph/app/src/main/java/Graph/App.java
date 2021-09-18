@@ -9,12 +9,13 @@ import java.util.ArrayList;
 public class App {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
       Graph graph=new Graph();
 
       ArrayList<Node > root1=new ArrayList<>();
       ArrayList<Node > root2=new ArrayList<>();
+      ArrayList<Node > root3=new ArrayList<>();
       Node node1=new Node("C");
       Node node2=new Node("D");
       Node node3=new Node("A");
@@ -22,14 +23,17 @@ public class App {
 
       graph.graphsNode.put(node1,root1);
       graph.graphsNode.put(node2,root2);
-
-
-
+      graph.graphsNode.put(node3,root3);
       graph.addEdge(node1,node2);
-//      System.out.println(graph.graphsNode);
-      System.out.println(graph.getNodes());
+      graph.addEdge(node1,node3);
+
+//      System.out.println(graph.breadthFirst("c"));
+
+      System.out.println(graph.graphsNode);
+//      System.out.println(graph.getNodes());
 
 //      System.out.println(graph.getNeighbors(node1));
+      System.out.println(graph.breadthFirstTraverse(node1));
 
     }
 }

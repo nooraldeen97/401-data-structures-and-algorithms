@@ -1,13 +1,41 @@
 package Graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
+
+
+
 
 public class Graph <T> {
 
   HashMap<Node,ArrayList<Node>> graphsNode=new HashMap<>();
 
-    public Node addToGraph(T value){
+
+
+  public List<Node<T>> breadthFirstTraverse(Node<T> root) throws Exception {
+    if(root.value==null){
+      return null;
+    }
+    Set<Node<T>> visited = new LinkedHashSet<>();
+    Queue<Node<T>> queue = new Queue<Node<T>>();
+    List<Node<T>> nodes = new ArrayList<>();
+
+    queue.enqueue(root);
+    visited.add(root);
+
+    while (!queue.isEmpty()){
+      Node<T> vertex = queue.dequeue();
+      nodes.add(vertex);
+      for (Node ver:graphsNode.get(vertex)) {
+        if(!visited.contains(ver)){
+          visited.add(ver);
+          queue.enqueue(ver);
+        }
+      }
+    }
+    return nodes;
+  }
+
+  public Node addToGraph(T value){
       ArrayList<Node> vertex=new ArrayList<>();
       Node addedNode=new Node(value);
       graphsNode.put(addedNode,vertex);
