@@ -5,9 +5,12 @@ package Graph;
 
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class App {
 
+  private Integer totalCost = 0;
 
     public static void main(String[] args) throws Exception {
 
@@ -35,5 +38,78 @@ public class App {
 //      System.out.println(graph.getNeighbors(node1));
       System.out.println(graph.breadthFirstTraverse(node1));
 
+
+      App app = new App();
+
+      Graph citiesGraph = new Graph();
+      citiesGraph.addToGraph("Pandora");
+      citiesGraph.addToGraph("Arendelle");
+      citiesGraph.addToGraph("Metroville");
+      citiesGraph.addToGraph("Monstroplolis");
+      citiesGraph.addToGraph("Narnia");
+      citiesGraph.addToGraph("Naboo");
+
+      Node<String> city1=new Node<String>("Pandora");
+      Node<String> city2=new Node<String>("Arendelle");
+      Node<String> city3=new Node<String>("Metroville");
+      Node<String> city4=new Node<String>("Monstroplolis");
+      Node<String> city5=new Node<String>("Narnia");
+      Node<String> city6=new Node<String>("Naboo");
+
+      citiesGraph.addEdge(city1,city2,150);
+      citiesGraph.addEdge(city2,city3,99);
+      citiesGraph.addEdge(city2,city4,42);
+      citiesGraph.addEdge(city3,city5, 37);
+      citiesGraph.addEdge(city3,city1, 82);
+      citiesGraph.addEdge(city3,city6, 26);
+      citiesGraph.addEdge(city4,city3, 105);
+      citiesGraph.addEdge(city4,city6, 73);
+      citiesGraph.addEdge(city6,city5, 250);
+
+      List<String> citiesArr = new ArrayList<>();
+      citiesArr.add("Metroville");
+      citiesArr.add("Pandora");
+
+      System.out.println(app.businessTrip(citiesGraph, citiesArr));
+
+      List<String> citiesArr2 = new ArrayList<>();
+      citiesArr2.add("Arendelle");
+      citiesArr2.add("Monstroplolis");
+      citiesArr2.add("Naboo");
+
+      System.out.println(app.businessTrip(citiesGraph, citiesArr2));
+
+      List<String> citiesArr3 = new ArrayList<>();
+      citiesArr3.add("Naboo");
+      citiesArr3.add("Pandora");
+
+      System.out.println(app.businessTrip(citiesGraph, citiesArr3));
     }
+
+
+  public Integer businessTrip(Graph graph, List<String> cities){
+    totalCost = 0;
+    int citiesSize = cities.size();
+
+    for (int i = 0; i < citiesSize; i ++){
+      if (i + 1 >= citiesSize){
+        break;
+      }
+      helperTrip(cities.get(i), cities.get(i + 1), graph);
+    }
+
+    return totalCost;
+  }
+
+  private void helperTrip(String city1, String city2, Graph graph){
+    if (graph.getNeighbors(new Node(city1)) == null){
+      return;
+    }
+    for (Node vertex: graph.getNeighbors(new Node(city1))) {
+      if (Objects.equals(city2, vertex.value)){
+        totalCost += vertex.weight;
+        break;
+      }
+    }
+  }
 }
